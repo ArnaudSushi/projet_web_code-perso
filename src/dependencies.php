@@ -17,7 +17,7 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
-
+/*
 //Service factory for the ORM
 $container['db'] = function ($container) {
 	$capsule = new \Illuminate\Database\Capsule\Manager;
@@ -27,11 +27,4 @@ $container['db'] = function ($container) {
 	$capsule->bootEloquent();
 
 	return $capsule;
-};
-
-$container[App\WidgetController::class] = function ($c) {
-	$view = $c->get('view');
-	$logger = $c->get('logger');
-	$table = $c->get('db')->table('table_name');
-	return new \App\WidgetController($view, $logger, $table);
-};
+};*/
