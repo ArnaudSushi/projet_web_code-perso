@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+	<?php $func->db;
+	$book = $func->db->table('books')->find($bookId);
+	?>
+
+	<head>
+	<title>Modify info of book</title>
+	</head>
+	<body>
+		<form method="post">
+			Current title : <?= ($book->title); ?></br>
+			New title : <input type="text" name="title" value=<?= ($book->title); ?>></br>
+			Current author : <?= ($book->author); ?></br>
+			New author : <input type="text" name="author" value=<?= ($book->author); ?>></br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

@@ -6,9 +6,9 @@ return [
 		'db' => [
 			'driver' => 'mysql',
 			'host' => 'localhost',
-			'database' => 'database',
+			'database' => 'webDevBase',
 			'username' => 'user',
-			'password' => 'password',
+			'password' => 'webDev',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

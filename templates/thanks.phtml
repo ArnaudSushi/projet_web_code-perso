@@ -5,7 +5,10 @@
 	</head>
 	<body>
 		<h1>You entered</h1>
-		<h2>First name = <?= ($fName); ?></h2> 
-		<h2>Last name = <?= ($lName); ?></h2> 
+		<h2>Book title : <?= ($title); ?></h2> 
+		<h2>Book author : <?= ($author); ?></h2> 
+		<form action="/books/" method="get">
+			<button name="Revenir au livres" type="submit">Revenir au livres</button>
+		</form>
 	</body>
 </html>

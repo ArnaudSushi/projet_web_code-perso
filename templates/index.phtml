@@ -16,23 +16,17 @@
             }
 
             h1 {
-                color: #719e40;
+                color: #0066ff;
                 letter-spacing: -3px;
                 font-family: 'Lato', sans-serif;
-                font-size: 100px;
+                font-size: 65px;
                 font-weight: 200;
                 margin-bottom: 0;
             }
         </style>
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
-
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+        <h1>Bienvenue dans votre système de gestion de bibliothèque</h1>
+		<form action="/books/" method="get"><button type="submit">Voir tous les livres</button></form>
     </body>
 </html>

@@ -17,7 +17,7 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
-/*
+
 //Service factory for the ORM
 $container['db'] = function ($container) {
 	$capsule = new \Illuminate\Database\Capsule\Manager;
@@ -27,4 +27,8 @@ $container['db'] = function ($container) {
 	$capsule->bootEloquent();
 
 	return $capsule;
-};*/
+};
+
+$container['HomeController'] = function ($container) {
+	return new \App\Controllers\HomeController($container);
+};

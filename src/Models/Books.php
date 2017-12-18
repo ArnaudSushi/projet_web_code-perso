@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Order extends Eloquent {
+class Books extends Eloquent {
 
 	protected $fillable = ['title'];
 	public $timestamp = false;
