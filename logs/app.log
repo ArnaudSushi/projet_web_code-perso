@@ -403,3 +403,15 @@
 [2017-12-12 13:55:58] slim-app.INFO: On modifie le livre d'id  [] {"uid":"3aa42c8"}
 [2017-12-13 11:01:31] slim-app.INFO: On modifie le livre d'id  [] {"uid":"ee7b9dc"}
 [2017-12-13 11:01:51] slim-app.INFO: On modifie le livre d'id  [] {"uid":"d45bf34"}
+[2017-12-19 10:17:47] slim-app.INFO: Slim-Skeleton '/' route [] {"uid":"6a5eb84"}
+[2017-12-19 10:17:56] slim-app.INFO: Slim-Skeleton '/' route [] {"uid":"8dc7a0e"}
+[2017-12-19 10:18:06] slim-app.INFO: Requesting the form [] {"uid":"097b497"}
+[2017-12-19 10:18:11] slim-app.INFO: Submitting info [] {"uid":"1603917"}
+[2017-12-19 10:18:16] slim-app.INFO: Submitting info suppr book [] {"uid":"0d76691"}
+[2017-12-19 10:18:16] slim-app.INFO: 5 [] {"uid":"0d76691"}
+[2017-12-19 10:18:19] slim-app.INFO: Requesting the form [] {"uid":"0e7021a"}
+[2017-12-19 10:18:22] slim-app.INFO: Submitting info [] {"uid":"868b839"}
+[2017-12-19 10:20:14] slim-app.INFO: Submitting info suppr book [] {"uid":"28e52de"}
+[2017-12-19 10:20:14] slim-app.INFO: 4 [] {"uid":"28e52de"}
+[2017-12-19 10:20:45] slim-app.INFO: Submitting info suppr book [] {"uid":"b82f477"}
+[2017-12-19 10:20:45] slim-app.INFO: 4 [] {"uid":"b82f477"}

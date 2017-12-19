@@ -113,3 +113,12 @@ $app->get('/books/{bookId}/modify', function (Request $request, Response $respon
 	return $this->renderer->render($response, 'modifyABook.phtml', $args);
 
 });
+
+$app->post('/books/{bookId}/modify', function (Request $request, Response $response, array $args) {
+	$this->db;
+	$book = $this->db->table('books')->get($bookId);
+	$book->name = 
+
+	return $this->renderer->render($response, 'modifyABook.phtml', $args);
+
+});
