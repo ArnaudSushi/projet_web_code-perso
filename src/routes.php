@@ -23,7 +23,6 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 		$book->author = 'AUTHEST';
 		$book->save();
 	}
-	//	echo $book->toJson();
 
 	// Render index view
 	return $this->renderer->render($response, 'index.phtml', $args);
@@ -115,10 +114,20 @@ $app->get('/books/{bookId}/modify', function (Request $request, Response $respon
 });
 
 $app->post('/books/{bookId}/modify', function (Request $request, Response $response, array $args) {
+	$this->logger->info("modifying");
+
 	$this->db;
-	$book = $this->db->table('books')->get($bookId);
-	$book->name = 
+	$bookId = $request->getParam('id');
+	$book = $this->db->table('books')->find($bookId);
 
-	return $this->renderer->render($response, 'modifyABook.phtml', $args);
+	$args['title'] = $request->getParam('title');
+	$args['author'] = $request->getParam('author');
 
+	$book->title = $args['title'];
+	$book->author = $args['author'];
+	$this->logger->info($book->title);
+	$this->logger->info($book->author);
+	$book->save();
+
+	return $this->renderer->render($response, 'thanks.phtml', $args);
 });
