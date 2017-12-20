@@ -74,7 +74,7 @@ $app->get('/books/', function (Request $request, Response $response, array $args
 	foreach ($books as $book) {
 		$index++;
 		$response->getBody()->write("<a href=\"/books/" . $book->id . "\">");
-		$response->getBody()->write("Livre " . $index . "</a>: " . $book->title . "  " . $book->author . "</br></br>");
+		$response->getBody()->write("Livre " . $index . "</a>: \"" . $book->title . "\" Ecris par: " . $book->author . "</br></br>");
 	}
 	return $this->renderer->render($response, 'books.phtml', $args);
 });
@@ -123,11 +123,11 @@ $app->post('/books/{bookId}/modify', function (Request $request, Response $respo
 	$args['title'] = $request->getParam('title');
 	$args['author'] = $request->getParam('author');
 
-	$book->title = $args['title'];
-	$book->author = $args['author'];
+	$this->db->table('books')->where('id', $bookId)->update(['title' => $args['title']]);
+	$this->db->table('books')->where('id', $bookId)->update(['author' => $args['author']]);
 	$this->logger->info($book->title);
-	$this->logger->info($book->author);
-	$book->save();
+//	$this->logger->info($book->author);
+//	$book->save();
 
 	return $this->renderer->render($response, 'thanks.phtml', $args);
 });
