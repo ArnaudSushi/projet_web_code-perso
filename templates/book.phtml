@@ -4,6 +4,8 @@
 	$book = $func->db->table('books')->find($bookId);?>
 	<head>
 		<title>Livre <?= ($bookId);?></title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	</head>
 	<body>
 		Opérations de détails sur le livre : <?= ($book->title);?>
