@@ -950,7 +950,8 @@ class Builder
         $originalWhereCount = is_null($query->wheres)
                     ? 0 : count($query->wheres);
 
-        $result = $scope(...array_values($parameters)) ?? $this;
+        $result = $scope(...array_values($parameters));
+        if (is_null($result)) $result = $this;
 
         if (count((array) $query->wheres) > $originalWhereCount) {
             $this->addNewWheresWithinGroup($query, $originalWhereCount);

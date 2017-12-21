@@ -576,7 +576,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     {
         $this->fireModelEvent('saved', false);
 
-        if ($this->isDirty() && ($options['touch'] ?? true)) {
+        if ($this->isDirty() && (is_null($options['touch']) || $options['touch'])) {
             $this->touchOwners();
         }
 
@@ -641,8 +641,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     protected function getKeyForSaveQuery()
     {
-        return $this->original[$this->getKeyName()]
-                        ?? $this->getKey();
+	$key = $this->original[$this->getKeyName()];
+        return (is_null($key) ? $this->getKey() : $this->original[$this->getKeyName()]);
     }
 
     /**
@@ -728,7 +728,9 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         // We will actually pull the models from the database table and call delete on
         // each of them individually so that their events get fired properly with a
         // correct set of attributes in case the developers wants to check these.
-        $key = ($instance = new static)->getKeyName();
+        $class = get_class($this);
+        $instance = new $class();
+        $key = $instance->getKeyName();
 
         foreach ($instance->whereIn($key, $ids)->get() as $model) {
             if ($model->delete()) {
