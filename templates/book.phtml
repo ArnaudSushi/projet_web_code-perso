@@ -11,10 +11,10 @@
 		Opérations de détails sur le livre : <?= ($book->title);?>
 		<h4>Nom du livre : <?= ($book->title); ?></h4>
 		<h4>Auteur du livre : <?= ($book->author); ?></h4>
-		<form action="/books/<?=($bookId);?>/modify" method="get">
+		<form action="/index.php/books/<?=($bookId);?>/modify" method="get">
 			<button type="submit">Modifier le livre</button>
 		</form>
-		<form action="/books/" method="post">
+		<form action="/index.php/books/" method="post">
 			<input name="supp" type="hidden" value="<?=$bookId?>">
 			<button type="submit">Supprimer le livre</button></br>
 		</form>

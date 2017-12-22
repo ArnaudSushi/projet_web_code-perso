@@ -65,7 +65,7 @@ $app->get('/books/', function (Request $request, Response $response, array $args
 
 	foreach ($books as $book) {
 		$index++;
-		$response->getBody()->write("<a href=\"/books/" . $book->id . "\">");
+		$response->getBody()->write("<a href=\"/index.php/books/" . $book->id . "\">");
 		$response->getBody()->write("Livre " . $index . "</a>: \"" . $book->title . "\" Ecris par: " . $book->author . "</br></br>");
 	}
 	return $this->renderer->render($response, 'books.phtml', $args);
